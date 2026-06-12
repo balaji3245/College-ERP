@@ -1,41 +1,37 @@
-# SmartCampus ERP Management System
+# 🎓 SmartCampus ERP Management System
 
-This is a complete, dynamic ERP Management System built for colleges and universities. 
+This is a complete, dynamic ERP Management System built for colleges and universities.
 
-## Technology Stack
+## 🛠️ Technology Stack
 * **Frontend**: React.js, Tailwind CSS, Vite
-* **Backend**: Python, Flask, SQLAlchemy, JWT Authentication
-* **Database**: MySQL / MariaDB
+* **Backend**: Python, Flask, JWT Authentication
+* **Database**: MongoDB (MongoEngine)
 
 ---
 
-## 🚀 How to Run the Project on Your Machine
+## 🚀 How to Run the Project on Your Machine (Local Setup)
 
-Since this project has a full backend and database, you need to set up MySQL, Python, and Node.js before running it.
+This project has a frontend, a backend, and a database. You need to run them all locally.
 
 ### Prerequisites
 Make sure you have the following installed on your computer:
 1. **Node.js** (v18 or higher)
 2. **Python** (v3.8 or higher)
-3. **MySQL** or **MariaDB** Server
+3. **MongoDB Community Server** 
 
 ---
 
 ### Step 1: Database Setup (MongoDB)
 
-You need to install MongoDB on your system.
-
-**For Linux Users:**
-Open your terminal in the project folder and run:
-```bash
-sudo bash install_mongodb.sh
-```
-*(This script will install MongoDB and start the `mongodb` service)*
+You need MongoDB running on your system for the backend to connect.
 
 **For Windows Users:**
-1. Download MongoDB Community Server from the official website.
-2. Install it with default settings.
-3. Ensure the MongoDB service is running on `mongodb://localhost:27017`.
+1. Download MongoDB Community Server from the official MongoDB website.
+2. Install it with default settings (Next -> Next -> Install).
+3. Ensure the MongoDB service is running in the background.
+
+**For Mac/Linux Users:**
+- Run the MongoDB service (e.g., `sudo systemctl start mongod` or using Homebrew `brew services start mongodb-community`).
 
 ---
 
@@ -49,22 +45,22 @@ Open a terminal inside the project folder.
    ```
 2. Create a virtual environment:
    ```bash
-   python3 -m venv venv
+   python -m venv venv
    ```
 3. Activate the virtual environment:
-   * **Linux/Mac**: `source venv/bin/activate`
    * **Windows**: `venv\Scripts\activate`
+   * **Linux/Mac**: `source venv/bin/activate`
 4. Install all dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-5. Seed the database with initial dummy data (run this only once):
+5. **Seed the database** with initial dummy data (run this ONLY ONCE):
    ```bash
-   python3 seed.py
+   python seed.py
    ```
 6. Start the backend server:
    ```bash
-   python3 app.py
+   python app.py
    ```
 *(Leave this terminal open. The backend server runs on `http://localhost:5000`)*
 
@@ -82,7 +78,7 @@ Open a **NEW** terminal window in the main project folder (`ERP-Management-Syste
    ```bash
    npm run dev
    ```
-*(This will start the frontend on `http://localhost:5173` or `5174`)*
+*(This will start the frontend on `http://localhost:5173`. Open this link in your browser!)*
 
 ---
 
@@ -98,5 +94,5 @@ Once the frontend starts, you can log in using the data we seeded in Step 2:
 
 ---
 
-## Important Notes for Sharing
-If you are sending this project to someone else, **DO NOT** send the `node_modules` or `backend/venv` folders. They are very large and system-specific. The other person must generate them on their own computer using the `npm install` and `python -m venv venv` commands mentioned above.
+## ⚠️ Important Notes for Sharing
+If you are sending this project folder to your client, **DO NOT** send the `node_modules` or `backend/venv` folders. They are very large and system-specific. The client must generate them on their own computer using the `npm install` and `python -m venv venv` commands mentioned above.
